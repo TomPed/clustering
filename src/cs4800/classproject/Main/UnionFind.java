@@ -47,13 +47,13 @@ public final class UnionFind {
         this.parentMap().put(v, rentA);
         this.childrenMap().get(rentA).add(v);
       }
-      this.childrenMap().remove(rentB); // remove it
+      this.childrenMap().remove(rentB);
     } else {
       for (Vertex v : this.childrenMap().get(rentA)) {
         this.parentMap().put(v, rentB);
         this.childrenMap().get(rentB).add(v);
       }
-      this.childrenMap().remove(rentA); // remove it
+      this.childrenMap().remove(rentA);
     }
   }
 

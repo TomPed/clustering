@@ -24,16 +24,6 @@ public final class Kruskal {
           edges.add(e);
           uf.union(e.getStart(), e.getEnd());
         });
-
-
-    for (Edge e : graph.getEdges()) {
-      if (uf.find(e.getStart()) != uf.find(e.getEnd())) {
-        edges.add(e);
-        uf.union(e.getStart(), e.getEnd());
-      }
-    }
-
-
     return new UndirectedGraph(graph.getVertices(), edges);
   }
 }

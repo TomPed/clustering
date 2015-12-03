@@ -25,9 +25,5 @@ public final class Main {
     System.out.println("The purity is: " + Utils.purity(clusters));
     System.out.println("Seconds to calculate values: " + (end - start) * .001);
     System.out.println("Done.");
-
-    System.out.println();
-    System.out.println();
-    System.out.println(clusters.size());
   }
 }
