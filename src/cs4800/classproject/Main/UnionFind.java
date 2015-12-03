@@ -39,18 +39,21 @@ public final class UnionFind {
    * @param b second given {@link Vertex}
    */
   public void union(Vertex a, Vertex b) {
-    if (this.childrenMap().get(this.find(a)).size() > this.childrenMap().get(this.find(b)).size()) {
-      for (Vertex v : this.childrenMap().get(this.find(b))) {
-        this.parentMap().put(v, this.find(a));
-        this.childrenMap().get(this.find(a)).add(v);
+    Vertex rentA = this.find(a);
+    Vertex rentB = this.find(b);
+
+    if (this.childrenMap().get(rentA).size() > this.childrenMap().get(this.find(b)).size()) {
+      for (Vertex v : this.childrenMap().get(rentB)) {
+        this.parentMap().put(v, rentA);
+        this.childrenMap().get(rentA).add(v);
       }
-      this.childrenMap().get(this.find(b)); // remove it
+      this.childrenMap().remove(rentB); // remove it
     } else {
-      for (Vertex v : this.childrenMap().get(this.find(a))) {
-        this.parentMap().put(v, this.find(b));
-        this.childrenMap().get(this.find(b)).add(v);
+      for (Vertex v : this.childrenMap().get(rentA)) {
+        this.parentMap().put(v, rentB);
+        this.childrenMap().get(rentB).add(v);
       }
-      this.childrenMap().get(this.find(a)); // remove it
+      this.childrenMap().remove(rentA); // remove it
     }
   }
 
