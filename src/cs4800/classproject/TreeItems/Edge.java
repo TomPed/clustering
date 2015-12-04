@@ -1,5 +1,7 @@
 package cs4800.classproject.TreeItems;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * To represent an edge
  */
@@ -102,7 +104,7 @@ public final class Edge implements Comparable {
    *         weights
    */
   @Override
-  public int compareTo(Object o) {
+  public int compareTo(@NotNull Object o) {
     Edge e = (Edge) o;
     return (int) this.getWeight() - (int) e.getWeight();
   }

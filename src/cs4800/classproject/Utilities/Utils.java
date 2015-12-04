@@ -10,7 +10,6 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 
 /**
  * To represent a utility class
@@ -47,7 +46,7 @@ public final class Utils {
             vertices.get(i), vertices.get(j)));
       }
     }
-    Collections.sort(edges); //sorting
+    Collections.sort(edges);
     return edges;
   }
 
